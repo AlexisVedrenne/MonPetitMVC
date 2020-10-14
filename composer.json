@@ -7,8 +7,7 @@
             "email": "your@email.here"
         }
     ],
-    "require": {},
-    
+    "require": {},   
     "autoload":{
         "psr-4":{
             "APP\\": "src",
