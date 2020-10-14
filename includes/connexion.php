@@ -1,3 +1,5 @@
+<?php
+namespace Tools;
 class Connexion {
 
     private static $connexion = null;
@@ -24,3 +26,4 @@ class Connexion {
 
         return self::$connexion;
     } 
+}

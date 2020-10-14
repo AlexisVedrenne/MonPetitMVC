@@ -14,7 +14,7 @@ try{
     
     $c=new $controller();
     $params=array(array_slice($_REQUEST,2));
-    call_user_func_array($c,$action, $params);
+    call_user_func_array(array($c,$action),$params);
 } catch (Exception $ex) {
     echo $ex->getMessage();
 }

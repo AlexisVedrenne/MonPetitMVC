@@ -21,7 +21,7 @@ use \Exception;
 class GestionClientController {
     
     public function chercherUn($params){
-        $modele=new gestionClientModel();
+        $modele=new GestionClientModel();
         $id=filter_var(intval($params["id"]),FILTER_VALIDATE_INT);
         $unClient=$modele->find($id);
         if($unClient){
