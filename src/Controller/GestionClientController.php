@@ -14,7 +14,7 @@ namespace APP\Controller;
  * @author vedrenne.alexis
  */
 
-use APP\Modele\gestionClientModel;
+use APP\Model\GestionClientModel;
 use ReflectionClass;
 use \Exception;
 
@@ -30,6 +30,18 @@ class GestionClientController {
         }
         else{
             throw new Exception("Client ". $id . "inconnu");
+        }
+    }
+    
+    public function chercherTous(){
+        $modele= new GestionClientModel();
+        $clients=$modele->findAll();
+        if($clients){
+            $r=new ReflectionClass($this);
+            include_once PATH_VIEW . str_replace('Controller','View',$r->getShortName()) . "/plusieursClients.php";
+        }
+        else{
+            throw new Exception("Aucun Client à afficher");
         }
     }
 }

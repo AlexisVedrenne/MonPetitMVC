@@ -1,5 +1,6 @@
 <?php
 namespace Tools;
+use PDO;
 class Connexion {
 
     private static $connexion = null;
